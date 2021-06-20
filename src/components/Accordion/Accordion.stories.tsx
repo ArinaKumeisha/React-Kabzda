@@ -1,29 +1,29 @@
 import React, {useState} from 'react';
-import {OnOff, OnOfProps} from "./OnOff";
 import {Story} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
+import {Accordion} from "./Accordion";
 
 
 export default {
-    title: 'OnOff',
-    component: OnOff,
+    title: 'Accordion',
+    component: Accordion,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 };
 
-/*export const Template: Story<OnOfProps> = (args) => <OnOff {...args} />;*/
-
-export const OnMode = () => <OnOff on={true} onChange={action("клик")} />
-export const OffMode = () => <OnOff on={false} onChange={action("клик")} />
+/*export const Template: Story<AccordionPropsType> = (args) => <OnOff {...args} />*/
+const callback=action("collapsed or uncollapsed")
+export const MenuCollapsedMode= () => <Accordion titleValue={"Menu"}  collapsed={true} onChange={callback} />
+export const UserOncollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false} onChange={callback} />
 
 /*
 export const ModeChanging =()=>{
     const[value, setValue]=useState<boolean>(false)
-    return <OnOff on={value} onChange={setValue}/>
+    return <Accordion titleValue={"User"}collapsed={value} onChange={()=>setValue(!value)}/>
 }
-
 */
+
 
 
 
