@@ -8,22 +8,43 @@ export default {
     title: 'Accordion',
     component: Accordion,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: {control: 'color'},
     },
 };
 
-/*export const Template: Story<AccordionPropsType> = (args) => <OnOff {...args} />*/
-const callback=action("collapsed or uncollapsed")
-export const MenuCollapsedMode= () => <Accordion titleValue={"Menu"}  collapsed={true} onChange={callback} />
-export const UserOncollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false} onChange={callback} />
 
-/*
-export const ModeChanging =()=>{
-    const[value, setValue]=useState<boolean>(false)
-    return <Accordion titleValue={"User"}collapsed={value} onChange={()=>setValue(!value)}/>
+const callback = action("collapsed or uncollapsed")
+const onClickCallback = action("some item was clicked")
+export const MenuCollapsedMode = () => <Accordion titleValue={"Menu"}
+                                                  collapsed={true}
+                                                  onChange={callback}
+                                                  items={[]}
+                                                  onClick={onClickCallback}/>
+
+export const UserOnCollapsedMode = () => <Accordion titleValue={"Users"}
+                                                    collapsed={false}
+                                                    onChange={callback}
+                                                    items={[
+                                                        {value: 1, title: "Arina"},
+                                                        {value: 2, title: "Masha"},
+                                                        {value: 3, title: "Dasha"},
+                                                        {value: 4, title: "Sveta"}
+                                                    ]}
+                                                    onClick={onClickCallback}/>
+
+export const ModeChanging = () => {
+    const [value, setValue] = useState<boolean>(false)
+    return <Accordion titleValue={"User"}
+                      collapsed={value}
+                      onChange={() => setValue(!value)}
+                      items={[
+                          {value: 1, title: "Arina"},
+                          {value: 2, title: "Masha"},
+                          {value: 3, title: "Dasha"},
+                          {value: 4, title: "Sveta"}
+                      ]}
+                      onClick={(value) => {alert(`user ${value} be happy!`)}}/>
 }
-*/
-
 
 
 

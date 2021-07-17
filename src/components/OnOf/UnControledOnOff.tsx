@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 type PropsOn={
     onChange:(on:boolean) => void
     defaultOn ?: boolean
+
 }
 export function UnControlledOnOff(props:PropsOn) {
     const [on, setOn]=useState(props.defaultOn ? props.defaultOn: false)

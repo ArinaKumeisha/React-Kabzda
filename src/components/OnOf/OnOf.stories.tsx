@@ -22,8 +22,8 @@ export const ModeChanging =()=>{
     const[value, setValue]=useState<boolean>(false)
     return <OnOff on={value} onChange={setValue}/>
 }
-
 */
+
 
 
 

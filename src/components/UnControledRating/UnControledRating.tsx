@@ -3,7 +3,7 @@ import React, {useState} from "react";
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 type RatingPropsType = {
     defaultValue?: RatingValueType
-    onChange: (value: RatingValueType) => void
+    onChange  : (value: RatingValueType) => void
 }
 
 export function UncontrolledRating(props: RatingPropsType) {

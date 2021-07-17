@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
-import {Story} from "@storybook/react";
-import {action} from "@storybook/addon-actions";
+import React from 'react';
 import {UncontrolledAccordion} from "./UnControlledAccordion";
-
+import {action} from "@storybook/addon-actions";
 
 
 export default {
@@ -12,18 +10,14 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
+ const callback=action("accordion mode change event fired")
+ const callback1=action("collapsed or uncollapsed")
+export const MenuCollapsedMode = () => <UncontrolledAccordion titleValue={"Menu"} collapsed={true}/>;
 
-/*export const Template: Story<AccordionPropsType> = (args) => <OnOff {...args} />*/
-/*const callback=action("collapsed or uncollapsed")*/
-export const ModeChanging= () => <UncontrolledAccordion titleValue={"Users"}  />
 
-
-/*
-export const ModeChanging =()=>{
-    const[value, setValue]=useState<boolean>(false)
-    return <UncontrolledAccordion titleValue={"User"}/>
+export const ModeChanging = () => {
+    return <UncontrolledAccordion titleValue={"Users"}  />
 }
-*/
 
 
 

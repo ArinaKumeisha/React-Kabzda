@@ -1,42 +1,60 @@
 import React from "react";
 
+type ItemsType = {
+    value: any
+    title: string
+}
+
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
-   onChange:()=>void
+    onChange: () => void
+    items: Array<ItemsType>
+    onClick: (value: any) => void
 
 }
 
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onChange={props.onChange} accordionCollapsed={props.collapsed}/>
-            {!props.collapsed && <AccordionBody/>}
+            <AccordionTitle
+                title={props.titleValue}
+                onChange={props.onChange}
+                accordionCollapsed={props.collapsed}/>
+            {!props.collapsed &&
+            <AccordionBody
+                items={props.items}
+                onClick={props.onClick}/>}
         </div>
     )
 }
 
-    type AccordionTitlePropsType = {
-        accordionCollapsed:boolean
-        title: string
-        onChange:()=>void
+type AccordionTitlePropsType = {
+    accordionCollapsed: boolean
+    title: string
+    onChange: () => void
 
-    }
+}
 
-    function AccordionTitle(props: AccordionTitlePropsType) {
-        return (
-            <h3 onClick={props.onChange}>{props.title}</h3>
-        )
-    }
+function AccordionTitle(props: AccordionTitlePropsType) {
+    return (
+        <h3 onClick={props.onChange}>{props.title}</h3>
+    )
+}
 
-    function AccordionBody() {
-        return (<div>
+type AccordionBodyType = {
+    items: Array<ItemsType>
+    onClick: (value: any) => void
 
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </div>
-        )
-    }
+}
+
+function AccordionBody(props: AccordionBodyType) {
+    return (<div>
+            {props.items.map(
+                (i, index) => <li key={index}
+                                  onClick={() => {
+                                      props.onClick(i.value)
+                                  }}>{i.title}</li>)}
+        </div>
+    )
+}
