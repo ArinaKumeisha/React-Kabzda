@@ -14,7 +14,8 @@ import Selects from "./components/Selects/Selects";
 import {LikeUseCallBack} from "./components/Use.Memo";
 import {Examples} from "./components/UseState";
 import UseEffect from "./components/UseEffect/UseEffect";
-
+import SetTimeOutExample from "./components/UseEffect/SetTimeOut";
+import {Clock} from "./Clock/Clock";
 
 
 /*
@@ -54,8 +55,8 @@ function App() {
             <LikeUseCallBack/>
             <Examples/>
             <UseEffect/>
-
-
+            <SetTimeOutExample/>
+            <Clock/>
 
         </div>
     );
