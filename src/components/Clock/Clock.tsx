@@ -7,7 +7,7 @@ export const Clock = () => {
         setInterval(() => {
             setClock(getTime())
         }, 1000)
-    })
+    },[])
 
     function getTime() {
         let data = new Date()

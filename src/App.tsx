@@ -15,7 +15,7 @@ import {LikeUseCallBack} from "./components/Use.Memo";
 import {Examples} from "./components/UseState";
 import UseEffect from "./components/UseEffect/UseEffect";
 import SetTimeOutExample from "./components/UseEffect/SetTimeOut";
-import {Clock} from "./Clock/Clock";
+import {Clock} from "./components/Clock/Clock";
 
 
 /*
