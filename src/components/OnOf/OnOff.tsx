@@ -44,4 +44,5 @@ export function OnOff(props:OnOfProps) {
         </div>
     )
 }
+const OnAndOff=React.memo(OnOff)
 

@@ -28,6 +28,7 @@ export function Accordion(props: AccordionPropsType) {
         </div>
     )
 }
+const Accordions=React.memo(Accordion)
 
 type AccordionTitlePropsType = {
     accordionCollapsed: boolean
@@ -58,3 +59,4 @@ function AccordionBody(props: AccordionBodyType) {
         </div>
     )
 }
+

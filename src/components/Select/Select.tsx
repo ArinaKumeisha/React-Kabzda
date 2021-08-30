@@ -24,8 +24,6 @@ export function Select(props: SelectPropsType) {
     }
     return (
         <>
-
-
             <div className={s.select}>
                 <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {active &&
