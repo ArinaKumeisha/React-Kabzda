@@ -13,10 +13,11 @@ const SetTimeOutExample = () => {
         },
         [count])
     useEffect(() => {
-            setInterval(() => {
-                console.log("tick  "+ count)
-                setCount((state)=>state+1)
+            const interval = setInterval(() => {
+                console.log("tick  " + count)
+                setCount((state) => state + 1)
             }, 1000)
+           return () => clearInterval(interval)
         },
         [])
 

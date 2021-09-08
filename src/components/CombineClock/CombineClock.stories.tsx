@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CombineClock from "./CombineClock";
 
 
@@ -13,7 +12,6 @@ export const BaseDigitalExample = () => {
 export const BaseAnalogExample = () => {
     return <CombineClock mode={'analog'}/>;
 }
-
 
 
 

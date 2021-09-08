@@ -23,9 +23,7 @@ type PageTitlePropsType = {
     title: string
 }
 */
-
 function App() {
-
     let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     let [accordionCollapsed, setAccordionCollapsed] = useState(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
